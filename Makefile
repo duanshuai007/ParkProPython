@@ -13,7 +13,7 @@ X_INCDIR    := $(patsubst %, -I $(ROOT_DIR)/%, $(INCDIRS))
 
 LD_FLAG     := -lssl -lcrypto -lnopoll -lmysqlclient -lpthread
 
-NO_MAKE_DIR := include picture lib python
+NO_MAKE_DIR := include picture lib python go nodejs
 NO_MAKE     := $(patsubst %, grep -v % |, $(NO_MAKE_DIR))
 
 SUBDIRS     = $(shell ls -l | grep ^d | awk '{print $$9}' | $(NO_MAKE) tr "\n" " ")
